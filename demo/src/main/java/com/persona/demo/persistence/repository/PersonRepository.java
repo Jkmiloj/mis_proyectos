@@ -5,13 +5,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PersonRepository {
+
     public List<Person> getAll();
 
     public List<Person> getByGender(String gender);
 
     public List<Person> getByEdad(Integer years);
 
-    public List<Person> getByMayores(Integer years);
+    public List<Person> getByMayores();
 
     public List<Person> getByName(String name);
 

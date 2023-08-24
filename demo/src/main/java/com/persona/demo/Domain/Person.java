@@ -1,5 +1,6 @@
 package com.persona.demo.Domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Person {
@@ -7,11 +8,11 @@ public class Person {
     private String name;
     private String lastname;
     private String gender;
-    private Date born_date;
+    private LocalDate born_date;
     private Integer years;
     private String cellphone;
 
-    public Person(Integer cc, String name, String lastname, String gender, Date born_date, Integer years, String cellphone) {
+    public Person(Integer cc, String name, String lastname, String gender, LocalDate born_date, Integer years, String cellphone) {
         this.cc = cc;
         this.name = name;
         this.lastname = lastname;
@@ -53,11 +54,11 @@ public class Person {
         this.gender = gender;
     }
 
-    public Date getBorn_date() {
+    public LocalDate getBorn_date() {
         return born_date;
     }
 
-    public void setBorn_date(Date born_date) {
+    public void setBorn_date(LocalDate born_date) {
         this.born_date = born_date;
     }
 

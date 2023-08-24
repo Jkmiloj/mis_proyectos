@@ -1,6 +1,10 @@
 package com.persona.demo.controller;
 import com.persona.demo.Domain.Person;
 import com.persona.demo.Domain.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -8,7 +12,7 @@ import java.util.List;
 public class PersonController {
 
     PersonService personService;
-
+    @Autowired
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
@@ -28,9 +32,10 @@ public class PersonController {
         return personService.getByEdad(years);
     }
 
-    @GetMapping(value = "/mayor-edad/{years}")
-    public List<Person> getByMayores(@PathVariable("years")Integer years) {
-        return personService.getByMayores(years);
+    @GetMapping(value = "/mayor-edad")
+    public ResponseEntity<List<Person>> getByMayores() {
+        List<Person> mayorEdad = personService.getByMayores();
+        return new ResponseEntity<>(mayorEdad, HttpStatus.OK);
     }
 
     @GetMapping(value = "/traer-nombre/{name}")

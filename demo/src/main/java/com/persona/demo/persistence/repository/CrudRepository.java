@@ -16,8 +16,8 @@ public interface CrudRepository extends JpaRepository<PersonEntity, String> {
     @Query(value = "SELECT * FROM PERSON WHERE years =:years", nativeQuery = true)
     List<PersonEntity> getByEdad(@Param("years") Integer years);
 
-    @Query(value = "SELECT * FROM PERSON WHERE years >= 18", nativeQuery = true)
-    List<PersonEntity> getByMayores(@Param("years") Integer years);
+    /*@Query(value = "SELECT * FROM PERSON WHERE years >= 18", nativeQuery = true)
+    List<PersonEntity> getByMayores(@Param("years") Integer years);*/
 
     @Query(value = "SELECT *FROM person WHERE name LIKE 'A%' OR name LIKE 'a%'", nativeQuery = true)
     List<PersonEntity> getByName(@Param("name") String name);

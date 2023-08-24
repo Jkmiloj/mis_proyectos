@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -14,14 +15,14 @@ public class PersonEntity {
     private String name;
     private String lastname;
     private String gender;
-    private Date born_date;
+    private LocalDate born_date;
     private Integer years;
     private String cellphone;
 
     public PersonEntity() {
     }
 
-    public PersonEntity(Integer cc, String name, String lastname, String gender, Date born_date, Integer years, String cellphone) {
+    public PersonEntity(Integer cc, String name, String lastname, String gender, LocalDate born_date, Integer years, String cellphone) {
         this.cc = cc;
         this.name = name;
         this.lastname = lastname;
@@ -63,11 +64,11 @@ public class PersonEntity {
         this.gender = gender;
     }
 
-    public Date getBorn_date() {
+    public LocalDate getBorn_date() {
         return born_date;
     }
 
-    public void setBorn_date(Date born_date) {
+    public void setBorn_date(LocalDate born_date) {
         this.born_date = born_date;
     }
 

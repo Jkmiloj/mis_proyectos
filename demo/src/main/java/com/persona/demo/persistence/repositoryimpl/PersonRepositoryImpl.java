@@ -88,6 +88,11 @@ public class PersonRepositoryImpl implements PersonRepository {
     }
 
     @Override
+    public List<Person> getByMayores() {
+        return null;
+    }
+
+   /* @Override
     public List<Person> getByMayores(Integer years){
 
             List<Person> personList = new ArrayList<>();
@@ -108,7 +113,7 @@ public class PersonRepositoryImpl implements PersonRepository {
                 personList.add(person);
             });
             return personList;
-    }
+    }*/
 
     @Override
     public List<Person> getByName(String name){
